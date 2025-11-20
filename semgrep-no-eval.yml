@@ -1,0 +1,13 @@
+rules:
+  - id: no-eval-in-server
+    message: "Do not use eval() in server-side JavaScript code."
+    severity: ERROR
+    languages: [javascript, typescript]
+    patterns:
+      - pattern: eval($X)
+    metadata:
+      category: security
+      cwe: "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+      references:
+        - https://cwe.mitre.org/data/definitions/95.html
+
